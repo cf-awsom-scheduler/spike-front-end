@@ -10,6 +10,11 @@ const Requests = ({ requests }) => {
   useEffect(() => {
     setStateRequests(requests);
   });
+
+  function handleFilter(event) {
+    console.log(event.target.value);
+  }
+
   return (
     <div>
       <Head title="Requests" />
@@ -21,12 +26,7 @@ const Requests = ({ requests }) => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <div>
-          <select>
-            <option default>New requests in my region</option>
-            <option default>All requests</option>
-          </select>
-        </div>
+
         {stateRequests
           ? stateRequests.map(request => <Request {...request} />)
           : null}

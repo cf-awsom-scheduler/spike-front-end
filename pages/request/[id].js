@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Head from '../../components/head';
 import Nav from '../../components/nav';
+import Map from '../../components/map';
+import Calendar from '../../components/calendar';
 
 import fetch from 'isomorphic-unfetch';
 
 const Request = ({ request }) => {
-  const { studentName, instrument } = request;
+  const { studentName, instrument, address, zip, city } = request;
 
   const [showConfirmation, setConfirmation] = useState(false);
 
@@ -26,9 +28,8 @@ const Request = ({ request }) => {
 
         <button onClick={handleAcceptStudent}>Accept</button>
 
-        <section>Calendar</section>
-
-        <section>Map</section>
+        <Map />
+        <Calendar />
       </div>
 
       <style jsx>

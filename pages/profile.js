@@ -2,15 +2,19 @@ import React from 'react';
 import Head from '../components/head';
 import Nav from '../components/nav';
 
-const Profile = () => {
+const Profile = ({ name, address, zip, city }) => {
   return (
     <div>
       <Head title="My Account" />
       <Nav />
       <row className="row">
         <h1>Profile</h1>
-        <div>Name</div>
-        <div>Address</div>
+        <div>
+          <input defaultValue={'john'} />
+        </div>
+        <div>
+          <input defaultValue={'address'} />
+        </div>
       </row>
       <style jsx>
         {`
